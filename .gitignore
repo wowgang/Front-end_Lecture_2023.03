@@ -3,6 +3,8 @@
 test.html
 test.js
 
+test1.html
+
 #뒤에 /를 붙이면 디렉토리를 의미함
 #data 디렉토리에 있는 파일들은 Respository에 저장하지 말 것
 data/
