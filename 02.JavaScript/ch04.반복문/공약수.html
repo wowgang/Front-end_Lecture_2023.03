@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>commonDivisor</title>
+    <script>
+        function commonDivisors(){
+            let num1 = Number(document.getElementById('num1').value);
+            let num2 = Number(document.getElementById('num2').value);
+            //num이라는 id에의해 구분되는 element를 가져와서 값을 가져와라
+            let commonDivisors = [];
+
+            for (let i =1; i <= ((num1 > num2) ? num2 : num1); i++){   //3항 연산자 (조건)? 참일때 값 : 거짓일때 값
+                if (num1 % i == 0 && num2 % i == 0) {
+                    commonDivisors.push(i);
+                }   
+            }
+            let resTag = document.getElementById('result');
+            resTag.innerHTML = `<h4> ${num1},${num2} 의 공약수: ${commonDivisors}</h4>`
+} 
+    </script>
+</head>
+<body>
+    <h3>두 자연수의 공약수 찾기</h3>
+    <input type="text" id="num1" placeholder="자연수를 입력하세요">
+    <input type="text" id="num2" placeholder="자연수를 입력하세요">
+    <button onclick="commonDivisors()">확인</button>
+    <br>
+    <p id="result"></p>
+</body>
+</html>

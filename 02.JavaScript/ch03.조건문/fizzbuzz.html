@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FizzBuzz</title>
+    <script>
+        // 빨리 추려지게 조건의 범위가 작은것부터 점점 커지는 순서로
+        function fizzBuzz(){
+            let num = Number(document.getElementById('num').value);
+            //num이라는 id에의해 구분되는 element를 가져와서 값을 가져와라
+            let resTag = document.getElementById('result');
+            
+
+            // num % 3 && num % 5 == 0 
+            //let fb = num;
+            // let fb;
+            if (num % 15 == 0 ){
+                // fb = 'FizzBuzz'
+                resTag.innerHTML = '<h4>15의 배수입니다 fizz buzz.</h4>'
+                
+            } else if (num % 5 == 0){
+                // fb = 'Buzz'
+                resTag.innerHTML = '<h4>5의 배수입니다 buzz.</h4>'
+            } else if (num % 3 == 0 ){
+                // fb = 'Fizz'
+                resTag.innerHTML = '<h4>3의 배수입니다 fizz .</h4>'
+            }else {
+                // console.log(`${num}`);
+                // fb = num;
+                resTag.innerHTML = `<h4> ${num} </h4>`
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="num" placeholder="정수를 입력하세요">
+    <button onclick="fizzBuzz()">확인</button>
+    <br>
+    <p id="result"></p>
+
+</body>
+</html>

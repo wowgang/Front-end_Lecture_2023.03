@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구구단</title>
+    <script>
+        function gugu(){
+            let n = Number(document.getElementById('n').value);
+            let resTag = document.getElementById('result');
+            //num이라는 id에의해 구분되는 element를 가져와서 값을 가져와라
+            let res='';
+            for (let k=1; k<=9; k++){
+
+                res += `<h4> ${n} * ${k} = ${k*n}</h4>`
+            } 
+            resTag.innerHTML = res;
+            
+            
+        }
+    </script>
+</head>
+<body>
+    <h3>구구단</h3>
+    <input type="text" id="n" placeholder="자연수를 입력하세요">
+    <button onclick="gugu()">확인</button>
+    <br>
+    <p id="result"></p>
+</body>
+</html>
