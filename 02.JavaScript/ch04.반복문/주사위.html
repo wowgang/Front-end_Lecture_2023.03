@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function dicegame(){
+            let resTag = document.getElementById('result');
+            
+            let dice1 = Math.floor(Math.random() * 6) + 1;
+            let dice2 = Math.floor(Math.random() * 6) + 1;
+            let dice3 = Math.floor(Math.random() * 6) + 1;
+
+            if (dice1 == dice2 && dice1 == dice3) {
+                let res1 = 10000+ dice1 * 1000;     //세개 다 같을때
+                resTag.innerHTML = `<h4>1번주사위 : ${dice1} , 2번주사위 : ${dice2}, 3번주사위: ${dice3} 상금:${res1}</h4>`
+            } else if (dice1 == dice2 || dice1 == dice3) {
+                let res2 = 1000+ dice1 *100;        //셋중 둘만 같을때
+                resTag.innerHTML = `<h4>1번주사위 : ${dice1} , 2번주사위 : ${dice2}, 3번주사위: ${dice3} 상금:${res2}</h4>`
+            } else if (dice1 == dice2 || dice2 == dice3) {
+                let res3 = 1000+ dice2 *100;        //셋중 둘만 같을때
+                resTag.innerHTML = `<h4>1번주사위 : ${dice1} , 2번주사위 : ${dice2}, 3번주사위: ${dice3} 상금:${res3}</h4>`
+            } else {
+                let res4 = Math.max(dice1, dice2, dice3) * 100; // 모두 다를때 
+                resTag.innerHTML = `<h4>1번주사위 : ${dice1} , 2번주사위 : ${dice2}, 3번주사위: ${dice3} 상금:${res4}</h4>`
+            } 
+            
+           
+} 
+    </script>
+</head>
+<body>
+    <h3>DICE</h3>
+    <button onclick="dicegame()">돌리기</button>
+    <br>
+    <p id="result"></p>
+</body>
+</html>

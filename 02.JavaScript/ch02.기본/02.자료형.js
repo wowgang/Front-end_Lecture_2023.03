@@ -1,7 +1,7 @@
-//숫자 맨앞에 사용x ,대소문자 구분,공백x
-//클래스는 대문자로 시작
-//변수,함수,속성,메소드의 이름은 항상 소문자로 시작
-//여러 단어로 된 식별자는 각 단어의 첫글자를 대문자 myBook =camel낙타 location(자바), my_book =snake(파이썬)
+/* 숫자 맨앞에 사용x ,대소문자 구분,공백x
+클래스는 대문자로 시작
+변수,함수,속성,메소드의 이름은 항상 소문자로 시작
+여러 단어로 된 식별자는 각 단어의 첫글자를 대문자 myBook =camel낙타 location(자바), my_book =snake(파이썬) */
 // alt + shift + a 여러줄 주석
 console.log(Math.PI); 
 console.log(Math.exp(0)); //e의0승은 1
