@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>끝말잇기</title>
+</head>
+<body>
+    <div><span id="order">1</span>번째 참가자</div>
+    <div>제시어: <span id="word"></span></div>
+    <input type="text">
+    <button>입력</button>
+    <script>
+        //prompt는 사용자에게 입력값을 받고
+        //alert는 경고창, confirm은 사용자로부터 예,아니오를 받음
+      const number = parseInt(prompt('몇 명이 참가하나요?'),10); //prompt로 입력 받을때는 문자로 받아지기 때문에 숫자로 형변환 시켜줌(parseInt) ,10은 십진수를 의미 (생략가능하나 써줌)
+      /* const number = prompt('몇명이 참가한요?')
+      console.log(typeof number); // string */
+      alert(number); //알림창 내가 입력한 값이 나옴
+      const yesOrNo = confirm('확인이나 취소를 눌러보세요'); //확인,취소 할 수 있음.
+    //   console.log(yesOrNo) //확인을 하면 true 취소를하면 false
+    //    document.querySelector('#order'); //#=id가 order인것을 찾음 id는 고유한것 태그마다 한개있다. /class로 되었을경우에는 #이 아닌 .(점)으로/ ('div span') 태그 와 태그 사이의 공백은 자손을 의미 div의 자손인 span을 찾아라라는 의미 공백이 아닌 >꺽세로 표시할경우 바로아래 자식을 의미 
+        document.querySelector('input').addEventListener('input',function(){
+            console.log('글자 입력', event.target.value);
+        });
+        const onClick = () => {
+            console.log('버튼 클릭');
+        }
+        document.querySelector('button').addEventListener('click', onClick)
+    </script>
+</body>
+</html>
