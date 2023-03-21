@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>시계</title>
+    <script>
+        // 디지털 시계, 00:00 ~ 23:59
+        // 하루동안 3이 표시되는 시간은 몇초인가?
+        function digitclock() {
+            let resTag = document.getElementById('result');
+            let totalSeconds = 0;
+            for (let hour = 0; hour < 24; hour++) {
+                for (let minute = 0; minute < 60; minute++) {
+                    let display = hour + ':' + minute;
+                    if (display.indexOf('3') >= 0)      // display에 3이 있으면 0 이상인 값을 반환
+                        totalSeconds += 60;
+                }
+            }resTag.innerHTML = `<h4>총: ${totalSeconds}분.</h4>`
+        }
+    </script>
+</head>
+<body>
+    <h2>하루동안 3이 표시되는 시간은 몇초인가?</h2>
+    <button onclick="digitclock()">돌리기</button>
+    <br>
+    <p id="result"></p>
+</body>
+</html>

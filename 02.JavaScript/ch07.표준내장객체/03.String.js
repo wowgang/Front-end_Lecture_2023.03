@@ -117,14 +117,22 @@ for (let fruit of fruits)
     fruitStr += fruit;
 console.log(fruitStr); */
 
+function strCount(str, dst) {  //str 에서 dst가 몇번 사용되는가
+    return str.split(dst).length -1;
+    
+  }
 
 let numStr = '';
 for (i = 1; i <=1000; i++) {
     numStr += i;  ///'123456789101112...'   
 } for (let num = 0; num <=9; num++) {
-    let count = numStr.split(String(num)).length -1 ;
+    // let count = numStr.split(String(num)).length -1 ;
+    let count = strCount여기 다시시시시시
     console.log(`${num}은/는 ${count}번 사용됨.`)
   }
+
+
+
 
   //isPalindrome함수 만들기 (기러기,토마토)
 /* function isPalindrome() {

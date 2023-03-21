@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>거꾸로</title>
+    <script>
+      // isPalindrome 함수 만들기
+    //   const arrowSum = (str) =>
+      function isPalindrome() {
+        let resTag = document.getElementById('result');
+        let str = document.getElementById('n').value;
+        let reverseStr = '';
+        for (let i = str.length - 1; i >= 0; i--){
+            reverseStr += str[i];
+        }
+        resTag.innerHTML = `<h4>${str == reverseStr}</h4>`
+    }
+        
+    </script>
+</head>
+<body>
+    <h2>isPalindrome</h2>
+    <input type="text" id="n" placeholder="단어를 입력하세요">
+    <button onclick="isPalindrome()">돌리기</button>
+    <br>
+    <p id="result"></p>
+</body>
+</html>
