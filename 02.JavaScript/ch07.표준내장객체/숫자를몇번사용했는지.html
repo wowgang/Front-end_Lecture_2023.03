@@ -8,30 +8,29 @@
     <script>
         // 1 에서 1000까지 숫자가 있다.
         // 0은 몇번, 1은 몇번, ..., 9는 몇번 사용되는가?
-        function sc(){
-        let resTag = document.getElementById('result');
-        let str = Number(document.getElementById('str').value);
-
-        function strCount(str, dst) {           // str 에서 dst 가 몇번 사용되는가
+        
+        function strCount(str, dst) { // str에서 dst가 몇 번 사용되는가
             return str.split(dst).length - 1;
         }
 
-        let numStr = '';
-        for (let i = 1; i <= length - 1; i++)
-            numStr += i;                // 12345678910111213....9991000
-        for (let num = 0; num <= 9; num++) {
-            //let count = numStr.split(String(num)).length - 1;
-            let count = strCount(numStr, String(num));
+        function countStr() {
+            let resTag = document.getElementById('result');
+            let numStr = '';
+            for (let i = 1; i <= 1000; i++) {
+                numStr += i; // 12345678910111213....9991000
+            }
+            for (let num = 0; num <= 9; num++) {
+                let count = strCount(numStr, String(num));
+                resTag.innerHTML += `<h4>${num}은/는 ${count}번 사용됨.</h4>`;
+            }
         }
-        resTag.innerHTML = `<h4>${num} 은/는 ${count} 번 사용됨.</h4>`
-    }
     </script>
 </head>
 <body>
-    <h2>0~9까지 각 숫자들을 몇번 사용했을까?</h2>
+    <h2>0~9까지 각 숫자들을 몇 번 사용했을까?</h2>
     <input type="text" id="str" placeholder="숫자를 입력하세요">
-    <button onclick="sc()">돌리기</button>
+    <button onclick="countStr()">돌리기</button>
     <br>
-    <p id="result"></p>
+    <div id="result"></div>
 </body>
 </html>

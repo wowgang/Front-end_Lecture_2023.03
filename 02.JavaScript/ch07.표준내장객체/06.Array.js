@@ -3,6 +3,24 @@ str.substring(0,5); //hello (인데스0부터4까지표시) str값이 바뀌지 
 console.log(str) //hello world
  반대로 파괴적인 메소드는 자기 자신을 변화시킨다.*파괴적 메소드 */
 
+ /* #파괴적 처리 and 비파괴적 처리
+처리 후에
+-원본이 변경되었다 -> 파괴적 처리
+-원본이 변경되지 않았다 -> 비파괴적 처리 */
+
+//  배열의 메서드
+//  배열 뒤에 요소 추가하기 push(요소)
+//  배열 중간에 요소 추가하기 splice(인덱스, 0, 요소)
+//  - splice 접착이라는 뜻  a.splice(1, 0, '추가')
+//  인덱스로 배열의 요소 제거하기 splice(인덱스,1)
+//  배열 내부에서 값의 위치 찾기 indexOf(요소)
+//  값으로 배열의 요소 제거하기 indexOf() + splice() 활용
+/* const index = a.indexOf('하세요')  //'하세요'의 인덱스번호는 4
+console.log(index)
+a.splice(index, 1) //'하세요'=인덱스[4]를 지운것
+console.log(a) // [ '안녕', 2, 'hello', 55 ] */
+
+
 // Array
 // 배열 생성
 let fruits = ['apple', 'banana', 'cherry'];
