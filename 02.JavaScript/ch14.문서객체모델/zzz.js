@@ -91,6 +91,28 @@ output4 +='\n'
 }
 console.log(output4) 
 
+/* 
+ *
+  ***
+   *****
+    *******
+     *********
+      ***********
+       *************
+        ***************
+         *****************
+                          */
 
-let today = new Date();
-console.log(today.toDateString()); 
+
+let output5=''
+for (let i =0; i<9; i++){
+    for (let k =0; k<i+1; k++){  // k 추가 
+        output5 += ' '
+    }
+    for(let j=0; j<(2*i+1); j++){
+    output5 += '*'
+    }
+output5 +='\n'
+}
+console.log(output5) 
+         

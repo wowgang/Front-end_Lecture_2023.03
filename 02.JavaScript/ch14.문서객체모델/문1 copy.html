@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문제1</title>
+    <script>
+        /* 1.정수 두 개를 입력 받아 (첫 번째 입력 값의 범위는 1~20,
+        두 번째 입력 값의 범위는 10~30이며 
+        첫 번재 입력 값은 두 번째 입력 값보다 4이상 작아야 합니다)
+        첫 번째 정수부터 두 번째 정수까지를 지수로 하는 
+        2의 거듭제곱 배열을 출력하는 프로그램을 만드세요. */
+        function jjj() {
+            let num1 = Number(document.getElementById('num1').value);
+            let num2 = Number(document.getElementById('num2').value);
+            arr = [];
+            console.log(num1,num2);
+            // !((num1  >=1 && num1 <=20)&&(num2  >=10 && num2 <=30)&&(num1<=num2-4)) 드모르간의법칙으로 바꾸기 부등호는 반대로 연산자도 반대로
+            if (num1 <1 || num1 >20 || num2  <10 || num2 > 30||num1 > num2-4){
+                alert('다시 입력하세요');
+                return ;
+            }
+            for (let i = num1; i<=num2; i++)
+                    arr.push(2** i);
+                    
+            document.getElementById('result').innerHTML = arr
+        }
+    </script>
+</head>
+<body>
+    <h2>정수 2개를 입력하면 그정수를 지수로한 2의 거듭제곱을 배열로 만들어 드립니다.</h2>
+    <input type="text" id="num1" placeholder="1~20" style="width:70px; height:50px; text-align: center;" >
+    <input type="text" id="num2" placeholder="10~30" style="width:70px; height:50px; text-align: center;">
+    <button onclick="jjj()" style="background-color: aqua; border-radius: 25%;">돌리기</button>
+    <p id="result" style="font-size: 30px;"></p>
+    
+</body>
+</html>

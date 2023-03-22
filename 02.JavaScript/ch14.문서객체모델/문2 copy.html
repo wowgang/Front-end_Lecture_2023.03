@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문제2</title>
+    <script>
+        /* 2. 다음의 문자열에서 'the'의 개수를 출력하는 프로그램을 만드세요.
+            단, 모든 문자가 소문자인 'the'만 찾으면 되며 'them', 'there', 'their'등은 포함하지 않아야 합니다.
+            the grown-ups , Response , this time , was to adcise me to lay aside  */
+        function findd() {
+            let text = document.getElementById('textarea').value;
+            text = text.replace(/[',.-]/g, '') ;
+            text = text.toLowerCase();
+            arr = text.split(' ');
+            let count = 0; 
+                console.log(arr)
+            for (let word of arr){
+                if (word == 'the')
+                    count++;
+            }   
+            document.getElementById('result').innerHTML = `입력된 문장에 'the'의 개수는 => ${count}개 입니다.`
+                    
+        }
+    </script>
+</head>
+<body>
+    <h2>'the'의 개수는?</h2>
+    <textarea name="" id="textarea" style="width:500px; height: 300px;">
+        the grown-ups' response, this time, was to advise me to lay aside my drawings of boa constrictors, whether from the inside or the outside, and devote myself instead to geography, history, arithmetic, and grammar. That is why, at the, age of six, I gave up what might have been a magnificent career as a painter. I had been disheartened by the failure of my Drawing Number One and my Drawing Number Two. Grown-ups never understand anything by themselves, and it is tiresome for children to be always and forever explaining things to the.
+    </textarea>
+    <!-- <input type="text" id="texthe" placeholder="'the' 문장을 입력하세요."> -->
+    <button onclick="findd()">돌리기</button>
+    <p id="result"></p>
+</body>
+</html>
