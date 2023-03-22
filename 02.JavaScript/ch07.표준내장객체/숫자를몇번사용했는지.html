@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>시계</title>
+    <title>몇번</title>
     <script>
         // 1 에서 1000까지 숫자가 있다.
         // 0은 몇번, 1은 몇번, ..., 9는 몇번 사용되는가?
@@ -21,8 +21,9 @@
             }
             for (let num = 0; num <= 9; num++) {
                 let count = strCount(numStr, String(num));
-                resTag.innerHTML += `<h4>${num}은/는 ${count}번 사용됨.</h4>`;
+                result += 
             }
+            resTag.innerHTML += `<h4>${num}은/는 ${count}번 사용됨.</h4>`;
         }
     </script>
 </head>

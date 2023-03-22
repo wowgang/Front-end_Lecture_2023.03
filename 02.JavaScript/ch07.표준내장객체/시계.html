@@ -9,20 +9,21 @@
         // 디지털 시계, 00:00 ~ 23:59
         // 하루동안 3이 표시되는 시간은 몇초인가?
         function digitclock() {
-            let resTag = document.getElementById('result');
+            let num = document.getElementById('num').value;
             let totalSeconds = 0;
             for (let hour = 0; hour < 24; hour++) {
                 for (let minute = 0; minute < 60; minute++) {
                     let display = hour + ':' + minute;
-                    if (display.indexOf('3') >= 0)      // display에 3이 있으면 0 이상인 값을 반환
+                    if (display.indexOf(num) >= 0)      // display에 3이 있으면 0 이상인 값을 반환
                         totalSeconds += 60;
                 }
-            }resTag.innerHTML = `<h4>총: ${totalSeconds}분.</h4>`
+            }document.getElementById('result').innerHTML = `<h4> 숫자${num}은 총: ${totalSeconds}초.</h4>`
         }
     </script>
 </head>
 <body>
-    <h2>하루동안 3이 표시되는 시간은 몇초인가?</h2>
+    <h2>하루의 시간(0~24)동안 1~9가 표시되는 시간은 몇초인가?</h2>
+    <input type="text" id="num" placeholder="숫자를 입력하세요">
     <button onclick="digitclock()">돌리기</button>
     <br>
     <p id="result"></p>

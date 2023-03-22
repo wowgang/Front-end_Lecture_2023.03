@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="https://kit.fontawesome.com/29799bf237.js" crossorigin="anonymous"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문제4</title>
+    <script>
+        // 4.디지털 시계를 숫자 이미지를 이용하여 멋지게 꾸며 보세요.
+        function twoDigit(num) {
+        return (num < 10) ? '0' + num : String(num);
+    }
+        function myDatetime(date) {             ////  괄호 안에 () date.를 추가했음 / 아래 이하 now를 date로 바꿨음 0321
+            return `${date.getFullYear()}-${twoDigit(date.getMonth()+1)}-${twoDigit(date.getDate())} ` + 
+            `${twoDigit(date.getHours())}:${twoDigit(date.getMinutes())}:${twoDigit(date.getSeconds())}`;
+    }
+        window.onload = function() {
+            setInterval(function() {
+                const now = new Date();
+                // const week = ['일','월','화','수','목','금','토']
+                const week = '일월화수목금토'.split(''); // 위 코드와 동일
+                let dateStr = myDatetime(now).substring(2, 10); // 2에서부터8글자 23-03-22(수)
+                dateStr += '('+ week[now.getDay()] +')';
+                const timeStr = myDatetime(now).substring(11, 19); // 10:46:00
+                
+
+                let strh1 = './img/number' + timeStr.substring(0,1) + '.png' ; 
+                let strh2 = './img/number' + timeStr.substring(1,2) + '.png' ; 
+                let strh3 = './img/number' + timeStr.substring(3,4) + '.png' ; 
+                let strh4 = './img/number' + timeStr.substring(4,5) + '.png' ; 
+                let strh5 = './img/number' + timeStr.substring(6,7) + '.png' ; 
+                let strh6 = './img/number' + timeStr.substring(7,8) + '.png' ; 
+                // const dStr = myDatetime(now.getDate() ,week)
+                document.getElementById('date').innerHTML = dateStr;
+                document.getElementById('time').innerHTML = timeStr
+
+                document.getElementById('h1').setAttribute('src',strh1);
+                document.getElementById('h2').setAttribute('src',strh2);
+                document.getElementById('m1').setAttribute('src',strh3);
+                document.getElementById('m2').setAttribute('src',strh4);
+                document.getElementById('s1').setAttribute('src',strh5);
+                document.getElementById('s2').setAttribute('src',strh6);
+            },1000);
+        }
+
+    
+    
+    </script>
+</head>
+<body style="margin: 40px;">
+    <h2 id="date"></h2>
+    <hr>
+    <h2 id="time"></h2>
+    <img id="h1" src="./img/number0.png" alt="0" style="width: 100px;">
+    <img id="h2" src="./img/number0.png" alt="0" style="width: 100px;">
+    <img id="m1" src="./img/number0.png" alt="0" style="width: 100px;">
+    <img id="m2" src="./img/number0.png" alt="0" style="width: 100px;">
+    <img id="s1"src="./img/number0.png" alt="0" style="width: 100px;">
+    <img id="s2" src="./img/number0.png" alt="0" style="width: 100px;">
+    
+    
+</body>
+</html>
