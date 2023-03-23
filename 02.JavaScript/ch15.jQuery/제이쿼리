@@ -1,0 +1,21 @@
+jq의js파일을 다운로드
+
+ 일반적인 사람이 보기위한 코드
+ uncompressed, development 
+ js
+ css
+
+
+ 기계가 보는 파일 (공백이없음)
+  compressed, 
+  min
+  ugply
+  기계가 보는 코드는 더 빠르게 읽음
+
+
+  jQuery CDN – Latest Stable Versions
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+
+
+
+  

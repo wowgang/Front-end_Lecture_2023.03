@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS선택자</title>
+    <!-- jQuery CDN코드 -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <script>
+        //$(document).ready( )  window부분을 jquery는 이렇게 써줌
+        //점.,공백,세미콜론;,잘 확인해야함
+        $(document).ready(function() {
+            $('#fruits').find('.national').css('backgroundColor','yellow');
+            $('#fruits .foreign').css('color','red'); //id쓰고 공백만들고 .클래스명을 입력해야한다
+            $('.foreign').css('backgroundColor','beige'); 
+            $('span').css('fontSize','24px')
+            // $('.national').parents().css('backgroundColor','acua');
+        });
+    </script>
+</head>
+<body style="margin:40px;">
+    <ul id="fruits"><span>내가 좋아하는 과일</span>
+        <li class="national">사과</li>
+        <li class="foreign">바나나</li>
+        <li class="national">감</li>
+        <li class="foreign">파인애플</li>
+    </ul>
+    <ul id="food"><span>내가 좋아하는 음식</span>
+        <li class="national">김치찌개</li>
+        <li class="foreign">파스타</li>
+        <li class="national">갈비찜</li>
+    </ul>
+        
+</body>
+</html>

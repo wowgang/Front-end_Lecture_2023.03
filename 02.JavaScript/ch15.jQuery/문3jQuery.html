@@ -5,27 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>문제3</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
     <script>
      /*    3.입력으로 받은 다음의 가격을 내림차순으로 출력하는 프로그램을 만드세요.
             51900;83000;158000;367500;250000;59200;128500;1304000 */
 
         function numsort() {
-            let num = document.getElementById('num').value;
-            
-            // let numbers = new Array.num
-            arr = num.split(';');  //arr은 배열이고 ,요소element는 스트링 string
+            // let num = document.getElementById('num').value;
+            let num = $('#num').val();
+            let arr = num.split(';');  //arr은 배열이고 ,요소element는 스트링 string
             let numArray = []; // 빈 배열 만들기
 
             for (let index of arr){     //배열의 요소
-                numArray.push(Number(index))    //빈배열에 arr배열의 요소를 숫자로 바꿔서 넣어줘라(push)
+                numArray.push(Number(index));    //빈배열에 arr배열의 요소를 숫자로 바꿔서 넣어줘라(push)
             } numArray.sort(function(a, b){     //sort 새로만든 배열을 정렬하는데 내림차순(b-a)으로 배열해라 /sort는 비교함수를 줘야한다  /map함수로 간결하게 만들수있음 람다까지 가능
                 return b - a;
                 
             }); 
             console.log(numArray)
-            document.getElementById('result').innerHTML = numArray
-
-            
+            $('#result').text(numArray);
         }
         
     </script>

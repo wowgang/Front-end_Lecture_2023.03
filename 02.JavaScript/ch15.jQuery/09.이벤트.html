@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery 이벤트</title>
+    <!-- jQuery CDN코드 -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <script>
+        //점.,공백,세미콜론;,잘 확인해야함
+        //$(document).ready( )  window부분을 jquery는 이렇게 써줌
+        $(document).ready(function() {
+            //이벤트 $(선택자)
+            $('h1')
+                .on('mouseover',function(e) {$(this).css('backgroundColor','yellow')})  //h1글자에 마우스대면 배경노란색
+                .on('mouseout',function(e) {$(this).css('backgroundColor','white')});   //h1글자에 마우스때면 배경하얀색
+
+            /* $('h1').on('click', function(e) {   //e는 지금 의미없음
+                alert($(this).text());      //h1글자를 클릭하면 알림창이 뜬다.
+            }); */
+            
+            $('h1').click(function(e) {   // click을 매소드르 만들어서사용할수있음 위코드와 동일
+                alert($(this).text());      //h1글자를 클릭하면 알림창이 뜬다.
+            });
+        });
+    </script>
+</head>
+<body style="margin:40px;">
+    <h1>Header A</h1>
+    <h1>Header B</h1>
+</body>
+</html>

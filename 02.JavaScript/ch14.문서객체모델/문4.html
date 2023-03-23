@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>문제4</title>
+    <title>ss문제4</title>
     <script>
         // 4.디지털 시계를 숫자 이미지를 이용하여 멋지게 꾸며 보세요.
         function twoDigit(num) {
@@ -21,33 +21,22 @@
                 // const week = ['일','월','화','수','목','금','토']
                 const week = '일월화수목금토'.split(''); // 위 코드와 동일
                 let dateStr = myDatetime(now).substring(2, 10); // 2에서부터8글자 23-03-22(수)
-                dateStr += '('+ week[now.getDay()] +')';
+                dateStr += '('+ week[now.getDay()] +')';    
                 // const dStr = myDatetime(now.getDate() ,week)
                 document.getElementById('date').innerHTML = dateStr;
 
                 const timeStr = myDatetime(now).substring(11, 19); // 10:46:00
-                
-                
-                let strh1 = './img/number' + timeStr.substring(0,1) + '.png' ; 
-                let strh2 = './img/number' + timeStr.substring(1,2) + '.png' ; 
-                let strh3 = './img/colonn' + '.png' ; 
-                let strh4 = './img/number' + timeStr.substring(3,4) + '.png' ; 
-                let strh5 = './img/number' + timeStr.substring(4,5) + '.png' ; 
-                let strh6 = './img/colonn' + '.png' ; 
-                let strh7 = './img/number' + timeStr.substring(6,7) + '.png' ; 
-                let strh8 = './img/number' + timeStr.substring(7,8) + '.png' ; 
+
+                h1.src = './img/number' + timeStr[0] + '.png' ; 
+                h2.src = './img/number' + timeStr[1] + '.png' ; 
+                c1.src = './img/colonn' + '.png' ;   //콜론은 고정값이라 시간처럼 time의 인덱스가 필요없다. 바뀌지않으니까
+                m1.src = './img/number' + timeStr[3] + '.png' ; 
+                m2.src = './img/number' + timeStr[4] + '.png' ; 
+                c2.src = './img/colonn' + '.png' ; 
+                s1.src = './img/number' + timeStr[6] + '.png' ; 
+                s2.src = './img/number' + timeStr[7] + '.png' ;  
 
                 document.getElementById('time').innerHTML = timeStr
-
-                
-                document.getElementById('h1').setAttribute('src',strh1);
-                document.getElementById('h2').setAttribute('src',strh2);
-                document.getElementById('c1').setAttribute('src',strh3);
-                document.getElementById('m1').setAttribute('src',strh4);
-                document.getElementById('m2').setAttribute('src',strh5);
-                document.getElementById('c2').setAttribute('src',strh6);
-                document.getElementById('s1').setAttribute('src',strh7);
-                document.getElementById('s2').setAttribute('src',strh8);
                 
             },1000);
         }
@@ -61,14 +50,14 @@
     <hr>
     <h2 id="time"></h2>
         <div>
-            <img id="h1" src="./img/number0.png" alt="0" style="width: 100px;">
-            <img id="h2" src="./img/number0.png" alt="0" style="width: 100px;">
-            <img id="c1" src="./img/colonn.png" alt="0" style="width: 100px;">
-            <img id="m1" src="./img/number0.png" alt="0" style="width: 100px;">
-            <img id="m2" src="./img/number0.png" alt="0" style="width: 100px;">
-            <img id="c2" src="./img/colonn.png" alt="0" style="width: 100px;">
-            <img id="s1"src="./img/number0.png" alt="0" style="width: 100px;">
-            <img id="s2" src="./img/number0.png" alt="0" style="width: 100px;">
+            <img id="h1" src="./img/number0.png" alt="시간숫자" style="width: 100px;">
+            <img id="h2" src="./img/number0.png" alt="시간숫자" style="width: 100px;">
+            <img id="c1" src="./img/colonn.png" alt="시간콜론" style="width: 100px;">
+            <img id="m1" src="./img/number0.png" alt="시간숫자" style="width: 100px;">
+            <img id="m2" src="./img/number0.png" alt="시간숫자" style="width: 100px;">
+            <img id="c2" src="./img/colonn.png" alt="시간콜론" style="width: 100px;">
+            <img id="s1"src="./img/number0.png" alt="시간숫자" style="width: 100px;">
+            <img id="s2" src="./img/number0.png" alt="시간숫자" style="width: 100px;">
         </div>
     
 </body>
