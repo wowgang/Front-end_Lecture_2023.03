@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        .fl {float :left;}
+        .cb {clear: both;}
+        #wrap {margin: 0 auto; width: 700px; height:550px;
+            /* border:1px solid red;     */
+            }
+        #wrap header { width: 700px; height: 100px;}
+        #wrap header .logo{ width: 200px; height: 100px; background-color: red;}
+        #wrap header .menu{ width: 500px; height: 100px; background-color: blue;}
+
+        .b{width: 100px; height: 100px; background-color: pink;}
+        .c{width: 100px; height: 100px; background-color: pink;}
+        .d{width: 100px; height: 100px; background-color: pink;}
+        .e{width: 100px; height: 100px; background-color: pink;}
+
+        .f{width: 500px; height: 200px; background-color: yellow;}
+        .g{width: 500px; height: 200px; background-color: green;}
+
+        .h{width: 100px; height: 100px; background-color: pink;}
+        .i{width: 100px; height: 100px; background-color: pink;}
+        .j{width: 100px; height: 200px; background-color: aqua;}
+
+        #wrap footer {width: 700px; height: 100px; background-color: violet;}
+    </style>
+</head>
+<body>
+    <!-- #wrap>header+#center.cb -->
+    <div id="wrap">
+        <header>
+            <!-- .logo.fl+.menu.fl -->
+            <div class="logo fl">header log.fl</div>
+            <div class="menu fl">header menu.fl</div>
+        </header>
+        <div id="center" class="cb">center.cb</div>
+            <aside class="fl">
+                <div class="b">aside.fl B</div>
+                <div class="c">aside.fl C</div>
+                <div class="d">aside.fl D</div>
+                <div class="e">aside.fl E</div>
+            </aside>
+            <section class="fl">
+                <div class="f">section.fl F</div>
+                <div class="g">section.fl G</div>
+            </section>
+            <aside class="fl">
+                <div class="h">aside.fl H</div>
+                <div class="i">aside.fl I</div>
+                <div class="j">aside.fl J</div>
+            </aside>
+        <footer class="cb">footer.cb K</footer>
+    </div>
+</body>
+</html>

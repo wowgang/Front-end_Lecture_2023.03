@@ -13,29 +13,26 @@
         첫 번째 정수부터 두 번째 정수까지를 지수로 하는 
         2의 거듭제곱 배열을 출력하는 프로그램을 만드세요. */
         $(document).ready(function() {
-            $('#num1').
-            $('.btn').click()
-            $('#num1').each(function(index, element) {
-                if (index % 2 == 0)
-                    $(this).css('backgroundColor','beige');  //this는 element에 해당됨= 해당element는 $(this)로 매핑
-                else
-                    $(this).css('color','red');
-            });
+            
             function jjj() {
-                let num1 = Number(document.getElementById('num1').value);
-                let num2 = Number(document.getElementById('num2').value);
+                let num1 = Number(('#num1').vla);
+                let num2 = Number(('#num2').vla);
                 arr = [];
                 if (num1 <1 || num1 >20 || num2  <10 || num2 > 30||num1 > num2-4){
                     alert('다시 입력하세요');
                     return ;
                 }
                 for (let i = num1; i<=num2; i++)
-                        arr.push(2** i);
+                arr.push(2** i);
+                
+                if (index % 2 == 0)
+                    $(this).css('backgroundColor','beige');  //this는 element에 해당됨= 해당element는 $(this)로 매핑
+                else
+                    $(this).css('color','red');
                         
-                document.getElementById('result').innerHTML = arr
-                document.querySelector('#result');
+                $('#result').html(arr);
             }
-    });
+        });
     </script>
 </head>
 <body>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery RGB범위</title>
+    <!-- jQuery CDN코드 -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <style>
+        .box {
+            width: 100px; height: 100px; background-color: rgb(128,128,128);
+        }
+    </style>
+    <script>
+        //점.,공백,세미콜론;,잘 확인해야함
+        //$(document).ready( )  window부분을 jquery는 이렇게 써줌
+        function valueChange() {
+            let r = $('#r').val();
+            let g = $('#g').val();
+            let b = $('#b').val();
+            $(".box").css("background-color", `rgb(${r}, ${g}, ${b})`);
+
+            /* $('#rval').html(r);
+            $('#gval').html(g);
+            $('#bval').html(b); */
+            $('.color-value').each(function(index) {
+                $(this).text([r, g, b][index]);
+            });
+            
+            console.log(r,g,b)
+        };
+    </script>
+</head>
+<body style="margin:40px;">
+    <table>
+        <tr>
+            <td>
+                <label for="r">Red:</label>
+            </td>
+            <td>
+                <input type="range" class="range" id="r" min="0" max="255" onchange="valueChange()">
+            </td>  
+            <td rowspan="3">
+                <div class="box"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="g">Green:</label>
+            </td>
+            <td>
+                <input type="range" class="range" id="g" min="0" max="255" onchange="valueChange()">
+            </td>
+        </tr>   
+        <tr>
+            <td>
+                <label for="b">Blue:</label>
+            </td>
+            <td>
+                <input type="range" class="range" id="b" min="0" max="255" onchange="valueChange()">
+            </td>    
+        </tr>
+       
+        
+       
+    </table>  
+    <p></p>
+    <!-- <div class="box"></div> -->
+    <!-- <h5>R: <span id="rval">128</span>, G: <span id="gval">128</span>, B: <span id="bval">128</span></h5> -->
+    <h5>
+        RGB:
+        <span class="color-value">128</span>,
+        <span class="color-value">128</span>,
+        <span class="color-value">128</span>
+      </h5>
+</body>
+</html>

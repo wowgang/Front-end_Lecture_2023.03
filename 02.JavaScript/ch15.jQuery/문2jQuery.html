@@ -11,21 +11,19 @@
             단, 모든 문자가 소문자인 'the'만 찾으면 되며 'them', 'there', 'their'등은 포함하지 않아야 합니다.
             the grown-ups , Response , this time , was to adcise me to lay aside  */
         function findd() {
-            let text = document.getElementById('textarea').value;
+            let text = $('#textarea').val();
             text = text.replace(/[',.]/g, '').replace(/[-\n]/g, ' ') ;   //특수기호(/[]/.g, )를 공백으로 대체하고 개행이랑 하이픈을 하나의공백으로 대체
             text = text.toLowerCase();  //소문자로 변경해주기
             // text = text.replace(/[',.-]/g, '').replace(/[-\n]/g, ' ').toLowerCase() ;   //두줄 한번에 할수도 있음
-
-            arr = text.split(' '); //공백으로 나누기
+            
+            let arr = text.split(' '); //공백으로 나누기
             let count = 0;  //count초기화
             
             for (let word of arr){   //배열의 요소를 찾아라
                 if (word == 'the')          //요소가 'the'가 같다면
                     count++;        //count를 더해라
             }   
-            document.getElementById('result').innerHTML = `입력된 문장에 'the'의 개수는 => ${count}개 입니다.`
-            document.querySelector('#result');
-                    
+                $('#result').html(`입력된 문장에 'the'의 개수는 => ${count}개 입니다.`)
         }
     </script>
 </head>

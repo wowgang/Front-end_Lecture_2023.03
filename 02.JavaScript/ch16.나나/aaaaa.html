@@ -1,0 +1,169 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>최가람-강원천문대-좌우슬라이드</title>
+    <!-- script:src -->
+    <script src="./script/jquery-1.12.3.js"></script>
+    <!-- <link rel="stylesheet" href="./css/style.css"> -->
+    <style>
+        /* reset */
+        *{margin: 0; padding: 0;}
+        li{margin: 0; padding: 0; list-style: none;} 
+        /* 목록이라 지들이 알아서 여백을 만들음 그래서 초기화 */
+        /* list-style: none; 목록 동그라미표시 없애기 */
+        a{text-decoration: none;}
+        body {background-color: #fff;}
+        .fl {float: left;} 
+        /* float: left; 블록구조를 인라인구조로 보이게 하려고 */
+
+        #wrap {width: 1200px; margin: 0 auto;}
+
+        /* header */
+
+        #wrap header {width: 1200px; height: 100px; position: relative;}
+        #wrap header .logo {width: 200px; height: 100px; background-color: red;}
+        #wrap header .menu {width: 1000px; height: 100px; background-color: blue;}
+        #wrap header .menu ul{display: none;} /* 가라기 */
+
+        /* center */
+        #wrap #center {width: 1200px; height: 500px; background-color: gray;}
+        #wrap #center img {display: none;} /* 가라기 */
+
+        /* 공지사항+갤러리, 배너1,배너2 */
+        #wrap #center .slider { width: 1200px; height: 300px; background-color: green;} 
+        #wrap #center .con .con1 { width: 400px; height: 200px; background-color: rgb(0, 0, 0);} 
+        #wrap #center .con .con2 { width: 400px; height: 200px; background-color: rgb(190, 39, 196);} 
+        #wrap #center .con .con3 { width: 400px; height: 200px; background-color: rgb(0, 0, 0);} 
+
+        /* footer */
+        #wrap footer {width: 1200px; height: 100px;}
+        #wrap footer .blogo {width: 200px; height: 100px; background-color: #555;}
+        #wrap footer .footer {width: 1000px; height: 100px; background-color: #ddd;}
+        #wrap footer .footer .bmenu {display: none;} /* 가라기 */
+        #wrap footer .footer .copyright {display: none;} /* 가라기 */
+    </style>
+</head>
+<body>
+    <!-- # <- id(레이아웃) - 1번 -->
+    <!-- . <- class(세부요소) - 여러번 가능 -->
+    <!-- #wrap>header>h1.logo>a>img -->
+    <div id="wrap">
+<!-- header  -->
+        <header>
+            <!-- 로고 -->
+            <h1 class="logo fl"><a href="#"><img src="./images/logo.png" alt="로고"></a></h1>
+            <!-- 메뉴 -->
+            <!-- .menu>nav>ul>(li>a{천문대소개}+ul.submenu>(li>a{menu$-$})*3)*4 -->
+            <!-- $-$는 1-1~ / *3은 3-3까지 나오라는 의미 ()를 잘보고하기-->
+            <div class="menu fl">
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="#">천문대소개</a>
+                            <ul class="submenu">
+                                <li><a href="#">menu1-1</a></li>
+                                <li><a href="#">menu2-2</a></li>
+                                <li><a href="#">menu3-3</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">천문대소개</a>
+                            <ul class="submenu">
+                                <li><a href="#">menu1-1</a></li>
+                                <li><a href="#">menu2-2</a></li>
+                                <li><a href="#">menu3-3</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">천문대소개</a>
+                            <ul class="submenu">
+                                <li><a href="#">menu1-1</a></li>
+                                <li><a href="#">menu2-2</a></li>
+                                <li><a href="#">menu3-3</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">천문대소개</a>
+                            <ul class="submenu">
+                                <li><a href="#">menu1-1</a></li>
+                                <li><a href="#">menu2-2</a></li>
+                                <li><a href="#">menu3-3</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+           
+        </header>
+<!-- contents -->
+        <!-- #center>.slider>.sliderList>.sliderImg>a>img -->
+        <div id="center">
+            <div class="slider">
+                <div class="sliderList">
+                    <div class="sliderImg"><a href="#"><img src="./images/slide1.jpg" alt="슬라이드1"></a></div>
+                    <div class="sliderImg"><a href="#"><img src="./images/slide2.jpg" alt="슬라이드2"></a></div>
+                    <div class="sliderImg"><a href="#"><img src="./images/slide3.jpg" alt="슬라이드3"></a></div>
+                </div>
+            </div>
+            <!-- con -->
+            <!-- .con>.con1>h2.on.fl+ul.notice -->
+            <div class="con">
+                <!-- 텝 : 공지사항 ,갤러리 -->
+                <div class="con1 fl">
+                    <h2 class="on fl"></h2>
+                    <ul class="notice"></ul>
+                        <!-- li*5>a+span -->
+                        <li><a href="#" class="layerPopup">공지사항 내용 ...</a><span>23-03-08</span></li>
+                        <li><a href="#">공지사항 내용 ...</a><span>23-03-08</span></li>
+                        <li><a href="#">공지사항 내용 ...</a><span>23-03-08</span></li>
+                        <li><a href="#">공지사항 내용 ...</a><span>23-03-08</span></li>
+                        <li><a href="#">공지사항 내용 ...</a><span>23-03-08</span></li>
+                    </ul>
+                    <!-- 갤러리 -->
+                    <!-- h2.gy.fl{갤러리} -->
+                    <h2 class="gy fl">갤러리</h2>
+                    <!-- ul.gallery>li>a>img -->
+                    <ul class="gallery">
+                        <li><a href="#"><img src="./images/thum-01.png" alt="갤러리1"></a></li>
+                        <li><a href="#"><img src="./images/thum-02.png" alt="갤러리2"></a></li>
+                        <li><a href="#"><img src="./images/thum-03.png" alt="갤러리3"></a></li>
+                    </ul>   
+                </div>
+                <!-- 배너1 -->
+                <!-- .con2>a>img -->
+                <div class="con2 fl"><a href="#"><img src="./images/banner-01.png" alt="배너1"></a></div>
+                <!-- 배너2 -->
+                <div class="con3 fl"><a href="#"><img src="./images/banner-02.png" alt="배너1"></a></div>
+
+            </div>
+        </div>
+<!-- footer -->
+<footer>
+    <!-- .blogo>a>img -->
+    <div class="blogo fl"><a href="#"><img src="./images/blogo.png" alt="하단로고"></a></div>
+    <!-- .footer>.bmenu>ul>li*4>a{MENU$} -->
+    <div class="footer fl">
+        <div class="bmenu">
+            <ul>
+                <li><a href="#">MENU1</a></li>
+                <li><a href="#">MENU2</a></li>
+                <li><a href="#">MENU3</a></li>
+                <li><a href="#">MENU4</a></li>
+            </ul>
+        </div>
+        <!-- .copyright>p -->
+        <div class="copyright">
+            <p>
+                Copyright (c) 2023 강원천문대. All Rights Reserved.
+            </p>
+        </div>
+    </div>
+</footer>
+    </div>
+</body>
+</html>s

@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>layout2-블로그 구조</title>
+    <style>
+        /* reset */
+        *{margin: 0; padding: 0;}
+        .fl {float: left;} /* 블록 구조의 박스 인라인 구조로 정렬 */
+        .cb {clear: both;} /* float 초기화 */
+        #wrap {margin: 0 auto; width: 700px; height: 550px; 
+            /* 상단, 하단 :0 / 좌우 : 중앙정렬 */
+             /* border:1px solid red; */
+             
+            }
+        #wrap header {width: 700px; height: 100px; background: #111;}
+        #wrap header .logo {width: 200px; height: 100px; background: red;}
+        #wrap header .menu {width: 500px; height: 100px; background: blue;}
+
+        .B{width: 100px; height: 100px; background: #555;}
+        .C{width: 100px; height: 100px; background: #666;}
+        .D{width: 100px; height: 100px; background: #777;}
+        .E{width: 100px; height: 100px; background: #888;}
+
+        .F{width: 500px; height: 200px; background: #999;}
+        .G{width: 500px; height: 200px; background: #000;}
+
+        .H{width: 100px; height: 100px; background: #333;}
+        .I{width: 100px; height: 100px; background: #555;}
+        .J{width: 100px; height: 200px; background: #DDD;}
+
+
+
+
+        #wrap footer {width: 700px; height: 100px; background: #999;}
+    </style>
+</head>
+<body>
+    <!-- #wrap>header+#center.cb -->
+    <div id="wrap">
+        <header>
+            <!-- .logo.fl+.menu.fl -->
+            <div class="logo fl">A-1</div>
+            <div class="menu fl">A-2</div>
+        </header>
+        <div id="center" class="cb"></div>
+            <!-- aside.fl+section.fl+aside.fl -->
+            <aside class="fl">
+                <div class="B">B</div>
+                <div class="C">C</div>
+                <div class="D">D</div>
+                <div class="E">E</div>
+            </aside>
+            <section class="fl">
+                <div class="F">F</div>
+                <div class="G">G</div>
+            </section>
+            <aside class="fl">
+                <div class="H">H</div>
+                <div class="I">I</div>
+                <div class="J">J</div>
+            </aside>
+    <footer class="cb">K</footer>
+    </div>
+    
+</body>
+</html>
