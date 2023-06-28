@@ -14,22 +14,24 @@
         }
 
         function countStr() {
-            let resTag = document.getElementById('result');
+            let resTag = parseInt(document.getElementById('result').value);
             let numStr = '';
             for (let i = 1; i <= 1000; i++) {
                 numStr += i; // 12345678910111213....9991000
             }
+            let result = '';
             for (let num = 0; num <= 9; num++) {
                 let count = strCount(numStr, String(num));
-                result += 
+                result += `${num}: ${count}<br>`;
             }
-            resTag.innerHTML += `<h4>${num}은/는 ${count}번 사용됨.</h4>`;
+            //resTag.innerHTML += `<h4>${num}은/는 ${count}번 사용됨.</h4>`;
+            document.getElementById('result4').innerHTML = result;
         }
     </script>
 </head>
 <body>
     <h2>0~9까지 각 숫자들을 몇 번 사용했을까?</h2>
-    <input type="text" id="str" placeholder="숫자를 입력하세요">
+    <input type="text" id="range" placeholder="숫자를 입력하세요">
     <button onclick="countStr()">돌리기</button>
     <br>
     <div id="result"></div>
